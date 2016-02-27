@@ -1,10 +1,10 @@
-app.service('MyService', ['$http', function($http) {
-  return {
-    getter: function(search) {
-       return $http.get("http://www.omdbapi.com/?s=" + search);
-    },
-    oneMovie: function(movieID) {
-      return $http.get("http://www.omdbapi.com/?i=" + movieID + "&plot=full");
-    }
-  }
+app.service('MyService', ['$http', '$q', function($http, $q) {
+      var deferred = $q.defer();
+      $http.get("stock.json").then(function(data) {
+        deferred.resolve(data);
+      })
+
+      this.gotData = function() {
+        return deferred.promise
+      }
 }]);
