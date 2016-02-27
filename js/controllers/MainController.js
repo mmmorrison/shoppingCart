@@ -4,5 +4,4 @@ app.controller('MainController', ['$scope', '$routeParams', 'MyService', functio
   promise.then(function(data) {
     $scope.teas = data.data
   })
-
 }])
