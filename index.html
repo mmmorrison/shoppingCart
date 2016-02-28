@@ -26,8 +26,7 @@
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-      </div>
-      <!--/.nav-collapse -->
+      </div> <!--/.nav-collapse -->
     </div>
   </nav>
 
@@ -44,52 +43,46 @@
       <label>Search by name</label>
       <input type="text">
       <input class='btn btn-danger' type="button" value='Checkout | Bag:'>
-    </span> <!--name search-->
-  </div> <!-- /container -->
+    </span>
+    <!--name search-->
+  </div>
+  <!-- /container -->
 
   <div class="container">
     <div class="row">
-      <div>
+      <div class='table'>
         <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Tea</th>
-        <th>Information</th>
-        <th><label>Sort by price</label><select>Sort by price</select></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat='tea in teas'>
-        <td><img src="{{tea.imageUrl}}"></td>
-        <td><h3 class='text-justify'>{{tea.name}}</h3>
-        <p>Price: {{tea.price | currency}}</p>
-      <p>Caffeine Scale: {{tea.caffeineScale}}</p>
-      <p>Ingredients: {{tea.ingredients}}</p>
-    </td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@TwBootstrap</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">4</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </table>
-      </div>
-    </div>
-  </div>
+          <thead>
+            <tr>
+              <th>Tea</th>
+              <th>Information
+                <!-- <span>
+              <label class='text-right'>Sort by price</label>
+              <select></select>
+              </span> -->
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat='tea in teas'>
+              <td><img ng-src="{{tea.imageUrl}}"></td>
+              <td>
+                <h3 class='text-justify'>{{tea.name}}</h3>
+                <p><strong>Price:</strong> {{tea.price/100 | currency}}</p>
+                <p><strong>Caffeine Scale:</strong> {{tea.caffeineScale}}</strong></p>
+                <p><strong>Ingredients:</strong> {{tea.ingredients}}</p>
+                <p><strong>Rating:</strong> {{tea.rating}}</p>
+                <!-- <p><strong>In Stock:</strong> {{tea.inStock | checkmark}}</p> -->
+                <p ng-show="tea.inStock"><strong>In stock?</strong> Yes</p>
+                <p ng-show="!tea.inStock"><strong>In stock?</strong> No</p>
+                <p ng-repeat='category in tea.categories'><strong>Categories:</strong> {{category}}</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div> <!--table-->
+    </div> <!--row-->
+  </div> <!--container-->
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -99,6 +92,7 @@
   <script src='js/app.js'></script>
   <script src='js/controllers/MainController.js'></script>
   <script src='js/services/MyService.js'></script>
+  <script src='js/filters/filters.js'></script>
   <script src='underscore.js'></script>
 </body>
 
