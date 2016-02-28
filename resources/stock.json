@@ -2,7 +2,7 @@
 	{
 		"_id": "55c8ee82152165d244b98300",
 		"name": "Bayard stew",
-		"ingredients": ["concentrated gluten, jewelry, dill, beetle nut, toast"],
+		"ingredients": "concentrated gluten, jewelry, dill, beetle nut, toast",
 		"caffeineScale": 244,
 		"price": 1540,
 		"inStock": true,
@@ -14,7 +14,7 @@
 	{
 		"_id": "55c8ee82152165d244b98301",
 		"name": "Incompactness syrup",
-		"ingredients": ["fennel, nutmeg leaves, parsley, cream of 'cream of cream', blarney"],
+		"ingredients": "fennel, nutmeg leaves, parsley, cream of 'cream of cream', blarney",
 		"caffeineScale": 49,
 		"price": 7348,
 		"inStock": true,
@@ -26,7 +26,7 @@
 	{
 		"_id": "55c8ee82152165d244b98302",
 		"name": "Flexner white tea",
-		"ingredients": ["hot sauce, iron, beetle nut, fresco, blarney, raw mashed potato"],
+		"ingredients": "hot sauce, iron, beetle nut, fresco, blarney, raw mashed potato",
 		"caffeineScale": 38,
 		"price": 4991,
 		"inStock": true,
@@ -38,7 +38,7 @@
 	{
 		"_id": "55c8ee82152165d244b98303",
 		"name": "Pressor leaf",
-		"ingredients": ["purina chow, flavorings, pepper, acorns, quality tallow, old sock, bay leaf"],
+		"ingredients": "purina chow, flavorings, pepper, acorns, quality tallow, old sock, bay leaf",
 		"caffeineScale": 153,
 		"price": 5496,
 		"inStock": true,
@@ -50,7 +50,7 @@
 	{
 		"_id": "55c8ee82152165d244b98304",
 		"name": "Flexner veggie tea",
-		"ingredients": ["cream of tartar, eggplant, cake, deer antler"],
+		"ingredients": "cream of tartar, eggplant, cake, deer antler",
 		"caffeineScale": 181,
 		"price": 2445,
 		"inStock": true,
@@ -62,7 +62,7 @@
 	{
 		"_id": "55c8ee82152165d244b98305",
 		"name": "Topflighter malt",
-		"ingredients": ["botox, toast, cream of 'cream of 'cream of cream'', kitchen scraps, beef, aligator tongue, lawn clippings"],
+		"ingredients": "botox, toast, cream of 'cream of 'cream of cream'', kitchen scraps, beef, aligator tongue, lawn clippings",
 		"caffeineScale": 241,
 		"price": 4486,
 		"inStock": true,
@@ -74,7 +74,7 @@
 	{
 		"_id": "55c8ee82152165d244b98306",
 		"name": "Cooking mix",
-		"ingredients": ["flavorings, roasted mushrooms, toast, tumeric"],
+		"ingredients": "flavorings, roasted mushrooms, toast, tumeric",
 		"caffeineScale": 230,
 		"price": 6973,
 		"inStock": true,
@@ -86,7 +86,7 @@
 	{
 		"_id": "55c8ee82152165d244b98307",
 		"name": "Cooking stew",
-		"ingredients": ["eggplant"],
+		"ingredients": "eggplant",
 		"caffeineScale": 122,
 		"price": 6003,
 		"inStock": true,
@@ -98,7 +98,7 @@
 	{
 		"_id": "55c8ee82152165d244b98308",
 		"name": "Prevenient herb tea",
-		"ingredients": ["cream of tartar, cream of cream, kitchen scraps, flavorings"],
+		"ingredients": "cream of tartar, cream of cream, kitchen scraps, flavorings",
 		"caffeineScale": 196,
 		"price": 1374,
 		"inStock": true,
@@ -110,7 +110,7 @@
 	{
 		"_id": "55c8ee82152165d244b98309",
 		"name": "Angular mix",
-		"ingredients": ["hot sauce, lawn clippings, fennel, parsley, quinine"],
+		"ingredients": "hot sauce, lawn clippings, fennel, parsley, quinine",
 		"caffeineScale": 196,
 		"price": 4158,
 		"inStock": true,

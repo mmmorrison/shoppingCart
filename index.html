@@ -1,48 +1,105 @@
 <!DOCTYPE html>
 <html ng-app='myApp'>
-  <head>
-    <meta charset="utf-8">
-    <title>MEAN Tea</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/main.css">
-  </head>
-  <body ng-controller='MainController'>
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">MEAN Tea!</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+
+<head>
+  <meta charset="utf-8">
+  <title>MEAN Tea</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body ng-controller='MainController'>
+  <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
-      <div class="row">
-        <label for="search">Search by category: </label>
-        <select name="categories"></select>
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">MEAN Tea!</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </nav>
+
+  <div class="container">
+    <span>
+      <label>Search by category: </label>
+      <!-- <select ng-options='[categoryArray]' ng-model='selected'></select> -->
+      <select ng-model="categories" ng-options="tea.categories for tea in teas"></select>
+
+    </span>
+    <!--category search-->
+
+    <span>
+      <label>Search by name</label>
+      <input type="text">
+      <input class='btn btn-danger' type="button" value='Checkout | Bag:'>
+    </span> <!--name search-->
+  </div> <!-- /container -->
+
+  <div class="container">
+    <div class="row">
+      <div>
+        <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Tea</th>
+        <th>Information</th>
+        <th><label>Sort by price</label><select>Sort by price</select></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat='tea in teas'>
+        <td><img src="{{tea.imageUrl}}"></td>
+        <td><h3 class='text-justify'>{{tea.name}}</h3>
+        <p>Price: {{tea.price | currency}}</p>
+      <p>Caffeine Scale: {{tea.caffeineScale}}</p>
+      <p>Ingredients: {{tea.ingredients}}</p>
+    </td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@TwBootstrap</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td colspan="2">Larry the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table>
       </div>
     </div>
+  </div>
 
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js' type="text/javascript"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src='js/app.js'></script>
+  <script src='js/controllers/MainController.js'></script>
+  <script src='js/services/MyService.js'></script>
+  <script src='underscore.js'></script>
+</body>
 
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js' type="text/javascript"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <script src='js/app.js'></script>
-    <script src='js/controllers/MainController.js'></script>
-    <script src='js/services/MyService.js'></script>
-  </body>
 </html>
