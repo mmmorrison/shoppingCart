@@ -35,7 +35,8 @@
     <span>
       <label>Search by category: </label>
       <!-- <select ng-options='[categoryArray]' ng-model='selected'></select> -->
-      <select ng-model="categories" ng-options="tea.categories for tea in teas"></select>
+      <!-- <select ng-model='data.stringArrVal' ng-options='str for str in stringArr'></select> -->
+      <select ng-model="categories.categoryArray" ng-options="categories for tea in categoryArray"></select>
     </span> <!--category search-->
 
     <span>
@@ -66,8 +67,19 @@
             <tr ng-repeat='tea in teas'>
               <td><img ng-src="{{tea.imageUrl}}"></td>
               <td>
-                <h3 class='text-justify'>{{tea.name}}</h3>
-                <p><strong>Price:</strong> {{tea.price/100 | currency}}</p>
+                <span>
+                  <h3>{{tea.name}}
+                    <span class='pull-right'>
+                      <span>Quantity:</span>
+                      <select ng:model="tea.qty">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                      </select>
+                      <button ng:click="addItem()" class="btn btn-default bag">Add To Bag</button>
+                    </span></h3>
+                </span>
+                <p ng:model="item.cost"><strong>Price:</strong> {{tea.price/100 | currency}}</p>
                 <p><strong>Caffeine Scale:</strong> {{tea.caffeineScale}}</strong>
                 </p>
                 <p><strong>Ingredients:</strong> {{tea.ingredients}}</p>
@@ -75,6 +87,7 @@
                 <!-- <p><strong>In Stock:</strong> {{tea.inStock | checkmark}}</p> -->
                 <p ng-show="tea.inStock"><strong>In stock?</strong> Yes</p>
                 <p ng-show="!tea.inStock"><strong>In stock?</strong> No</p>
+                <p><strong>Categories:</strong></p>
                 <ul ng-repeat="category in tea.categories">
                   <li>{{category}}</li>
                 </ul>

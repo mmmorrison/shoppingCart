@@ -2,3 +2,8 @@ body {
   min-height: 2000px;
   padding-top: 70px;
 }
+.bag{
+  background-color: #F5B965;
+  color: white;
+  border: #F5B965;
+}
