@@ -17,6 +17,7 @@ app.service('MyService', ['$http', '$q', function($http, $q) {
         };
       }
     }
+
   this.addItem = function() {
     invoice.items.push({
           qty: 0,

@@ -1,13 +1,22 @@
 app.controller('MainController', ['$scope', '$routeParams', 'MyService', function($scope, $routeParams, MyService) {
-  // $scope.categoryArray = [{categories: "dark", "cold", "dry", "hot", "awesome", "summer", "warm", "winter", "lucid", "spring"];
-  $scope.categoryArray = [{name: "dark"}];
-  $scope.selected = $scope.categoryArray[0];
   var promise = MyService.gotData();
-
+  $scope.x = [];
+  
   promise.then(function(data) {
     $scope.teas = data.data;
-    for (var i = 0; i < $scope.teas.length; i++) {
-    }
-  });
+    for (var i = 0; i < data.data.length; i++) {
+      data.data[i].categories.forEach(function(element) {
+        $scope.x.push(element);
+
+    })
+}
+
+    $scope.x = _.uniq($scope.x, function(element) {
+      return element
+    });
+  $scope.selected = $scope.x[0];
+  })
+
+
 
 }])

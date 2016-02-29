@@ -14,4 +14,3 @@ app.config(function($locationProvider, $routeProvider){
     })
     .otherwise('/')
 });
-// angular.module('phonecatApp', ['ngRoute','phonecatControllers','phonecatFilters']);
