@@ -10,19 +10,22 @@ app.service('MyService', ['$http', '$q', function($http, $q) {
   };
 
   this.bag = function() {
-    {invoice = {
-      items: [{
-          qty: 0,
-          cost: 0}]
-        };
+    {
+      invoice = {
+        items: [
+          {
+            _id: 0,
+            qty: 0,
+            cost: 0
+
+          }
+        ]
       }
     }
+  };
 
   this.addItem = function() {
-    invoice.items.push({
-          qty: 0,
-          cost: 0
-      });
+    invoice.items.push({qty: 0, cost: 0})
   };
 
   this.removeItem = function(item) {
@@ -36,6 +39,10 @@ app.service('MyService', ['$http', '$q', function($http, $q) {
       })
       return total;
   }
+
+
+
+
 
 
 

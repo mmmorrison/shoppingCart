@@ -4,13 +4,12 @@ app.config(function($locationProvider, $routeProvider){
   $locationProvider.html5Mode(true);
 
   $routeProvider
-    .when('/meantea/cart', {
-      templateUrl: 'partials/cart.html',
+    .when('/cart', {
+      templateUrl: '../partials/cart.html',
       controller: 'CartController'
     })
-    .when('/meantea', {
-      templateUrl: 'index.html',
-      controller: 'MainController'
+    .when('/', {
+      templateUrl: '../partials/tea.html',
+      controller: 'CartController'
     })
-    .otherwise('/')
 });
