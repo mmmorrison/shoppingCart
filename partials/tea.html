@@ -1,17 +1,21 @@
 <div class="container">
   <span>
-    <label>Search by category: </label>
+    <label>Search by category:
+    </label>
     <select ng-model='search.x'>
       <option ng-repeat='xx in x'>{{xx}}</option>
     </select>
-  </span> <!--category search-->
-  
+  </span>
+  <!--category search-->
+
   <span>
     <label>Search by name</label>
     <input type="text" ng-model='searchable'>
     <a href='/#/cart'><input class='btn btn-danger pull-right' type="button" value='Checkout | Bag:'></a>
-  </span> <!--name search-->
-</div> <!-- /container -->
+  </span>
+  <!--name search-->
+</div>
+<!-- /container -->
 
 <div class="container">
   <div class="row">
@@ -22,9 +26,11 @@
             <th>Tea</th>
             <th>Information
               <span class='pull-right'>
-              <label>Search by price</label>
-                <select ng-model="price">
-                  <option> </option>
+                <label>Search by price</label>
+                <!-- <select ng-model="search.price" ng-repeat="item in data | orderBy:'price':reverse | filter:customFilter"> -->
+                <select ng-model="search.price">
+                  <option>Highest</option>
+                  <option>Lowest</option>
                 </select>
               </span>
             </th>
@@ -38,28 +44,44 @@
                 <h3>{{tea.name}}
                   <span class='pull-right'>
                     <span>Quantity:</span>
-                    <select ng:model="tea.qty">
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
+                    <select>
+                      <option ng-model="qty" ng-repeat='qty in [1, 2, 3, 4, 5]'>{{qty}}</option>
                     </select>
-                    <button ng-model='addItem' class="btn btn-default bag">Add To Bag</button>
-                  </span></h3>
+
+                    <button ng-click='addItem(tea)' class="btn btn-default bag">Add To Bag</button>
+                  </span>
+                </h3>
               </span>
-              <p ng:model="cost"><strong>Price:</strong> {{tea.price | decimal | currency}}</p>
-              <p><strong>Caffeine Scale:</strong> {{tea.caffeineScale}}</strong>
-              </p>
-              <p><strong>Ingredients:</strong> {{tea.ingredients}}</p>
-              <p><strong>Rating:</strong> {{tea.rating}}</p>
-              <p><strong>In Stock:</strong> {{tea.inStock | YesNo }}</p>
-              <p><strong>Categories:</strong></p>
-              <ul ng-repeat="category in tea.categories">
-                <li>{{category}}</li>
-              </ul>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div><!--table-->
-  </div> <!--row-->
-</div> <!--container-->
+              <p ng:model="cost">
+                <strong>Price:</strong>
+                {{tea.price | decimal | currency}}</p>
+              <p>
+                <strong>Caffeine Scale:</strong>
+                {{tea.caffeineScale}}</strong>
+            </p>
+            <p>
+              <strong>Ingredients:</strong>
+              {{tea.ingredients}}</p>
+            <p>
+              <strong>Rating:</strong>
+              {{tea.rating}}</p>
+            <p>
+              <strong>In Stock:</strong>
+              {{tea.inStock | YesNo }}</p>
+            <p>
+              <strong>Categories:</strong>
+            </p>
+            <ul ng-repeat="category in tea.categories">
+              <li>{{category}}</li>
+            </ul>
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!--table-->
+</div>
+<!--row-->
+</div>
+<!--container-->

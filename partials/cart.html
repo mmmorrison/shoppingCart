@@ -1,7 +1,36 @@
-
-<h1>maria</h1>
 <div class="container">
   <div class="row">
-    {{works}}
-  </div>
-</div>
+    <div>
+      <span>
+        <h1>My Shopping Bag <span class='pull-right'>Order Total:</span>
+      </span>
+    </div>
+    <div class='table'>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat='item in items'>
+            <td>
+              <img ng-src="{{tea.imageUrl}}">
+              <h3>{{tea.name}}</h3>
+              <p><strong>Caffeine Scale:</strong> {{tea.caffeineScale}}</strong></p>
+              <p><strong>Ingredients:</strong> {{tea.ingredients}}</p>
+              <p><strong>Rating:</strong> {{tea.rating}}</p>
+              <p><strong>Categories:</strong></p>
+            </td>
+            <td>
+                <button>Edit</button>
+                <button>Remove</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!--table-->
+  </div> <!--row-->
+</div> <!--container-->

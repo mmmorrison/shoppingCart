@@ -9,3 +9,9 @@ app.filter('decimal', function() {
         return input / 100;
     };
 });
+
+app.filter('SortPrice', function() {
+    return function (input) {
+        return input / 100;
+    };
+});
