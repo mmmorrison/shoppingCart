@@ -3,7 +3,7 @@ app.service('MyService', ['$http', '$q', function($http, $q) {
   var qty = 0;
   var invoice = [];
 
-  $http.get("resources/stock.json").then(function(data) {
+  $http.get("shoppingCart/resources/stock.json").then(function(data) {
     deferred.resolve(data)
   });
 
