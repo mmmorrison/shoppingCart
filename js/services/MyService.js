@@ -12,19 +12,10 @@ app.service('MyService', ['$http', '$q', function($http, $q) {
   };
 
 
-  this.bag =  {
-    invoice: {
-      items: [
-        {
-          _id: 0,
-          qty: 0,
-          cost: 0
+  this.bag =  {invoice: {items:[]}},
 
-        }
-      ]
-    }
-  }
-  this.addItem = function(item) {
+
+  this.addItem = function() {
     this.bag.invoice.items.push({ _id: 0, qty: 0, cost: 0})
   };
 
@@ -32,13 +23,22 @@ app.service('MyService', ['$http', '$q', function($http, $q) {
       invoice.items.splice(index, 1);
   },
 
-  this.total = function() {
+  this.total = function(){
     var total = 0;
     forEach(invoice.items, function(item) {
       total += item.qty * item.cost;
       })
       return total;
-  }
+    }
+
+  // this.getQty = function(qty) {
+  //   // $scope.qty = qty;
+  //   console.log(qty);
+  //   return qty
+  //   }
+
+
+
 
 
 

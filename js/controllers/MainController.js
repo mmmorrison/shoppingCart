@@ -1,9 +1,12 @@
 app.controller('MainController', ['$scope', '$routeParams', 'MyService', function($scope, $routeParams, MyService) {
   var promise = MyService.gotData();
-  //LIST OF CATEGORIES
   $scope.x = [];
   $scope.SortPrice = [];
-  $scope.cart = {};
+  $scope.cart = {invoice:[]};
+  $scope.bag = {invoice:{items:[]}};
+  // $scope.qty = qty;
+  console.log($scope);
+
 
   promise.then(function(data) {
     $scope.teas = data.data;
@@ -19,15 +22,26 @@ app.controller('MainController', ['$scope', '$routeParams', 'MyService', functio
     $scope.selected = $scope.x[0];
   });
 
+  // $scope.getQty = function (x) {
+  //   console.log(this);
+  // }
+  //
+
+
   $scope.addItem = function(tea) {
-    console.log(tea);
+    // $scope.getQty();
+    $scope.bag.invoice.items.push(tea._id, tea.price)
   }
 
 
-    // $scope.qty = getQty();
-    $scope.bagCount = function(bag){
-      return bag.invoice.length
-    };
+
+
+
+
+
+    // $scope.bagCount = function(bag){
+    //   return bag.invoice.length
+    // };
 
 
 }]);

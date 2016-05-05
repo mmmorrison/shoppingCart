@@ -45,7 +45,7 @@
                   <span class='pull-right'>
                     <span>Quantity:</span>
                     <select>
-                      <option ng-model="qty" ng-repeat='qty in [1, 2, 3, 4, 5]'>{{qty}}</option>
+                      <option ng-click='getQty(qty)' ng-model='qty' ng-repeat='qty in [1, 2, 3, 4, 5]'>{{qty}}</option>
                     </select>
 
                     <button ng-click='addItem(tea)' class="btn btn-default bag">Add To Bag</button>
