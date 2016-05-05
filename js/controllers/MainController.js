@@ -6,6 +6,7 @@ app.controller('MainController', ['$scope', '$routeParams', 'MyService', functio
   $scope.bag = {invoice:{items:[]}};
   // $scope.qty = qty;
   console.log($scope);
+  $scope.test = "Is this working"
 
 
   promise.then(function(data) {
